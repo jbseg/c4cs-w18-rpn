@@ -6,4 +6,4 @@ install:
 script:
   - coverage run test_rpn.py
 after_success:
-  - make report -m 
+  - coverage report -m 
