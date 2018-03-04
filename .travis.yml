@@ -1,6 +1,10 @@
 language: python
 python:
   - "3.5"
+install:
+  - pip install codecov
 script:
-  - python test_rpn.py
-
+  - converage run test_rpn.py
+after_success:
+  - make report test_rpn.py
+  - YAY! 
