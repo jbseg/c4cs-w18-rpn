@@ -34,7 +34,7 @@ def calculate(myarg):
             else:
                 print(stylize('{}'.format(f), color)),
             print(stylize('{}'.format(arg1), color)) 
-	angry = colored.fg("red") + colored.attr("bold")
+        angry = colored.fg("red") + colored.attr("bold")
         print(stylize(stack, angry))
     if len(stack) != 1:
         raise TypeError("Too many parameters")
