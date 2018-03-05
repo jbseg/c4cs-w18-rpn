@@ -44,7 +44,7 @@ def main():
     while True:
         result = calculate(input("<rpn calc> "))
         print('%s%s Result:  %s' % (fg(10), bg(13), attr(0))),
-	print(result)
+        print(result)
 
 if __name__ == '__main__':
     main()
