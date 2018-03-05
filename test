@@ -1,0 +1,5 @@
+import colored
+from colored import fg, bg, attr
+print ('%s Hello World !!! %s' % (fg(10), attr(4)))
+print ('%s%s Hello World !!! %s' % (fg(1), bg(13), attr(0)))
+

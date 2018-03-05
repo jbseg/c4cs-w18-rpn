@@ -3,7 +3,7 @@ import readline
 import colored
 import operator
 
-from colored import fg, bg, attr
+from colored import fg, bg, attr, stylize
 
 operators = {
     '+': operator.add,
@@ -20,22 +20,31 @@ def calculate(myarg):
             token = int(token)
             stack.append(token)
         except ValueError:
+            f = token
             function = operators[token]
             arg2 = stack.pop()
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
-        print(stack)
+            color = bg(5) +  fg(29)
+            minus  = bg(1) + fg(20)
+            print(stylize('{}'.format(arg1), color)),
+            if f == '-':
+                print(stylize('{}'.format(f), minus)),
+            else:
+                print(stylize('{}'.format(f), color)),
+            print(stylize('{}'.format(arg1), color)) 
+	angry = colored.fg("red") + colored.attr("bold")
+        print(stylize(stack, angry))
     if len(stack) != 1:
         raise TypeError("Too many parameters")
     return stack.pop()
 
 def main():
-    color = fg('#c0c0c0') + bg('#00005f')
-    reset = attr('reset')
     while True:
-        result = calculate(input("rpn calc> "))
-        print(color + "Result: " + reset, result)
+        result = calculate(input("<rpn calc> "))
+        print('%s%s Result:  %s' % (fg(10), bg(13), attr(0))),
+	print(result)
 
 if __name__ == '__main__':
     main()
