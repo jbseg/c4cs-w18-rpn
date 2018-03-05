@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-
+import readline
+import colored
 import operator
 
+from colored import fg, bg, attr
 
 operators = {
     '+': operator.add,
@@ -29,9 +31,11 @@ def calculate(myarg):
     return stack.pop()
 
 def main():
+    color = fg('#c0c0c0') + bg('#00005f')
+    reset = attr('reset')
     while True:
         result = calculate(input("rpn calc> "))
-        print("Result: ", result)
+        print(color + "Result: " + reset, result)
 
 if __name__ == '__main__':
     main()
