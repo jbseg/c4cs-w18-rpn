@@ -20,3 +20,5 @@ class TestBasics(unittest.TestCase):
         self.assertEqual(25, result)
 def main():
 	unittest.main()
+if __name__ == '__main__':
+    main()
