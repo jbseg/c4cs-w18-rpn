@@ -20,22 +20,22 @@ def calculate(myarg):
             token = int(token)
             stack.append(token)
         except ValueError:
-            f = token
+ #           f = token
             function = operators[token]
             arg2 = stack.pop()
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
-            color = bg(5) +  fg(29)
-            minus  = bg(1) + fg(20)
-            print(stylize('{}'.format(arg1), color)),
-            if f == '-':
-                print(stylize('{}'.format(f), minus)),
-            else:
-                print(stylize('{}'.format(f), color)),
-            print(stylize('{}'.format(arg1), color)) 
-        angry = colored.fg("red") + colored.attr("bold")
-        print(stylize(stack, angry))
+#            color = bg(5) +  fg(29)
+#            minus  = bg(1) + fg(20)
+#            print(stylize('{}'.format(arg1), color)),
+#            if f == '-':
+#                print(stylize('{}'.format(f), minus)),
+#            else:
+#                print(stylize('{}'.format(f), color)),
+#            print(stylize('{}'.format(arg1), color)) 
+#        angry = colored.fg("red") + colored.attr("bold")
+#        print(stylize(stack, angry))
     if len(stack) != 1:
         raise TypeError("Too many parameters")
     return stack.pop()
